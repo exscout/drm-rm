@@ -1,0 +1,19 @@
+mysql:
+  image: local/mysql:latest
+  environment:
+        - DB_USER=redmine
+        - DB_PASS=password
+        - DB_NAME=redmine_production
+  volumes:
+        - ./data/mysql:/var/lib/mysql
+redmine:
+  image: local/redmine:3.0.3
+  links:
+        - mysql:mysql
+  environment:
+        - TZ=Europe/Kiev
+        - REDMINE_PORT=10083
+  ports:
+        - "10083:80"
+  volumes:
+        - ./data/redmine:/home/redmine/data
