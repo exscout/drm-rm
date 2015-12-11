@@ -1,5 +1,5 @@
 FROM ubuntu:14.04
-MAINTAINER exscout.am@gmail.com
+MAINTAINER exscout@ya.ru
 
 ENV REDMINE_VERSION=3.0.3 \
     REDMINE_USER="redmine" \
